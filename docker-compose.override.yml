@@ -1,0 +1,33 @@
+---
+version: '2'
+services:
+  zookeeper:
+    environment:
+      KAFKA_HEAP_OPTS: "-Xms64m -Xmx64m"
+
+  broker:
+    environment:
+      KAFKA_HEAP_OPTS: "-Xms256m -Xmx256m"
+
+  schema-registry:
+    environment:
+      SCHEMA_REGISTRY_HEAP_OPTS: "-Xms64m -Xmx64m"
+
+  connect:
+    environment:
+      KAFKA_HEAP_OPTS: "-Xms64m -Xmx64m"
+
+  control-center:
+    entrypoint: "true"
+
+  ksqldb-server:
+    entrypoint: "true"
+
+  ksqldb-cli:
+    entrypoint: "true"
+
+  ksql-datagen:
+    entrypoint: "true"
+
+  rest-proxy:
+    entrypoint: "true"
